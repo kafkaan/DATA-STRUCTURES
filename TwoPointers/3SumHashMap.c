@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+
 void swap(int *a, int *b);
 
 // ----------------------------------- Sort --------------------------------------------------
@@ -48,7 +50,17 @@ typedef struct HashSet
 
 unsigned int generateHash(int data, unsigned int capacity)
 {
-    return data % capacity;
+    // Utilisation de l'algorithme de hachage fnv-1a pour un entier
+    unsigned int hash = 2166136261u;  // Valeur d'amorçage FNV
+    
+    // Traite chaque octet de l'entier
+    unsigned char *bytes = (unsigned char *)&data;
+    for (size_t i = 0; i < sizeof(int); i++) {
+        hash ^= bytes[i];
+        hash *= 16777619u;  // Nombre premier FNV
+    }
+    
+    return hash % capacity;
 }
 
 int checkAndAddInHashSet(HashSet **arr, int data, int capacity)
@@ -103,8 +115,6 @@ int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
     int index = 0;
     unsigned int capacity = numsSize;
 
-    capacity = capacity * 2;
-
     HashSet **array = malloc(sizeof(HashSet *) * capacity);
 
     for (int i = 0; i < capacity; i++)
@@ -117,7 +127,7 @@ int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
         checkAndAddInHashSet(array, nums[i], capacity);
     }
 
-    int **resArray = malloc(sizeof(int *) * numsSize * numsSize * 2); // sécurité maximale
+    int **resArray = malloc(sizeof(int *) * numsSize * numsSize); // sécurité maximale
 
     int **pointer = resArray;
 
@@ -143,7 +153,8 @@ int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
             }
 
             int target = -(nums[i] + nums[j]);
-            if (getHashElement(target, array, capacity) != NULL && (getHashElement(target, array, capacity))->count > 0)
+            HashSet *targetSet = getHashElement(target, array, capacity);
+            if (targetSet != NULL && (targetSet)->count > 0)
             {
                 int *row = malloc(sizeof(int) * 3);
 
