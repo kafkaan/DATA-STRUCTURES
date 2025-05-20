@@ -9,13 +9,13 @@ typedef struct HashSet
     struct HashSet *next;
 } HashSet;
 
-// ------- generate hash for the index in the array -----
+// ------- generate hash for the index in the array ---------------------------------------
 unsigned int generateHash(int data, unsigned int capacity)
 {
     return data % capacity;
 }
 
-// ------- Function to check if data is alrady in the hahset --
+// ------- Function to check if data is alrady in the hahset -----------------------------
 int checkAndAddInHashSet(HashSet **arr, int data, int capacity)
 {
     //array contains pointers of hashsets 
@@ -38,7 +38,7 @@ int checkAndAddInHashSet(HashSet **arr, int data, int capacity)
     return 0;
 }
 
-// ----------------- Main function to check duplicates ---
+// ----------------- Main function to check duplicates ---------------------------------
 bool containsDuplicate(int *nums, int numSize)
 {
     unsigned int capacity = numSize;
@@ -65,7 +65,8 @@ bool containsDuplicate(int *nums, int numSize)
     return false;
 }
 
-
+/// @brief Main function
+/// @param  
 void main(void)
 {
     int nums1[] = {1, 2, 3, 4, 5};         // pas de doublons

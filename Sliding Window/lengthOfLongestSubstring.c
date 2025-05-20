@@ -5,7 +5,9 @@ int lengthOfLongestSubstring(char * s){
     int start = 0;
     int end = 0;
     int max_len = 0;
+    
     int char_set[128] = {0};
+
     while (end < len) {
         if (char_set[s[end]] == 0) {
             char_set[s[end]] = 1;

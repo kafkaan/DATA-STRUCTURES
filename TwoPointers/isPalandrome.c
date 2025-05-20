@@ -10,8 +10,10 @@ bool isPalindrome(char *s)
 
     while (i < j)
     {
-        while (i < j && !isalnum(s[i])) i++;
-        while (i < j && !isalnum(s[j])) j--;
+        while (i < j && !isalnum(s[i]))
+            i++;
+        while (i < j && !isalnum(s[j]))
+            j--;
 
         if (tolower(s[i]) != tolower(s[j]))
             return false;
@@ -22,4 +24,3 @@ bool isPalindrome(char *s)
 
     return true;
 }
-

@@ -37,6 +37,8 @@ int checkAndAddInHashSet(HashSet **arr, int data, int index, int capacity)
     (*top)->next = NULL;
     return 0;
 }
+
+
 /// @brief principal function wich send an array with 2 numbers to sum target
 /// @param nums
 /// @param numsSize
