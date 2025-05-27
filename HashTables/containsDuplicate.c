@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-// ------- struct type ---------
+// ------- struct type -------------------------------------------------------------------------
 typedef struct HashSet
 {
     int data;
@@ -65,8 +65,7 @@ bool containsDuplicate(int *nums, int numSize)
     return false;
 }
 
-/// @brief Main function
-/// @param  
+// -------------------------------------------- Main ----------------
 void main(void)
 {
     int nums1[] = {1, 2, 3, 4, 5};         // pas de doublons

@@ -1,6 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+*/
+
+
+/// @brief struct Hashset contains data the frequence of the elemnt and next element pointer -------------------- >
 typedef struct HashSet
 {
     int data;
@@ -8,6 +24,8 @@ typedef struct HashSet
     struct HashSet *next;
 } HashSet;
 
+
+// ----------------------------------------------------- Sort ------------------------------------------------------ >
 void swap(HashSet **a, HashSet **b)
 {
     HashSet *temp = *a;
@@ -44,22 +62,10 @@ void quickSort(HashSet **arr, int low, int high)
     }
 }
 
-/*
-
-Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
-Example 1:
-
-Input: nums = [1,1,1,2,2,3], k = 2
-Output: [1,2]
-
-Example 2:
-
-Input: nums = [1], k = 1
-Output: [1]
-*/
+// ----------------------------------------------------- Sort End ------------------------------------------------------ >
 
 
-
+// ----------------------------- Hash ------------------------
 unsigned int generateHash(int data, unsigned int capacity)
 {
     const unsigned int knuth = 2654435761u;

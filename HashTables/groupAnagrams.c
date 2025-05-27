@@ -9,7 +9,7 @@ void quickSort(char arr[], int low, int high);
 void swap(char *a, char *b);
 
 
-// ----------------------------------- hashsets ------------------------
+// ----------------------------------- hashsets ------------------------------------ >
 // Structure pour stocker un mot dans un groupe
 typedef struct WordNode
 {
@@ -37,7 +37,7 @@ char *getSignature(char *word)
     return signature;
 }
 
-// Ajoute un mot au groupe d'anagrammes approprié
+// ---------------------------------------------- ADD WORD ---------------------- >
 void addWord(AnagramGroup **table, char *word, int capacity, int *groupCount)
 {
     if (!word)
@@ -48,14 +48,15 @@ void addWord(AnagramGroup **table, char *word, int capacity, int *groupCount)
     if (!signature)
         return;
 
-    // Calcule le hash pour la signature
+    // ------------------------------------ Hash ------------------------------- >
     unsigned long hash = 5381;
     for (char *p = signature; *p; p++)
     {
         hash = ((hash << 5) + hash) + *p; // hash * 33 + c
     }
     hash %= capacity;
-
+    // ------------------------------------ Hash End  ------------------------------- >
+   
     // Cherche si un groupe avec cette signature existe déjà
     AnagramGroup *curr = table[hash];
     AnagramGroup *prev = NULL;
@@ -138,7 +139,7 @@ void addWord(AnagramGroup **table, char *word, int capacity, int *groupCount)
 }
 
 
-// ------------------------------ Trie -----------------------------------------------------------
+// ------------------------------ Trie ----------------------------------------------------------- >
 // Partition function pour quickSort
 int partition(char arr[], int low, int high)
 {
@@ -173,7 +174,7 @@ void swap(char *a, char *b)
     *a = *b;
     *b = t;
 }
-
+// ------------------------------ Trie End ----------------------------------------------------------- >
 
 // --------------------------- Main ------------------------------------------------------------------
 // Main function pour grouper les anagrammes
