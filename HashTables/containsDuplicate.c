@@ -42,8 +42,8 @@ int checkAndAddInHashSet(HashSet **arr, int data, int capacity)
 bool containsDuplicate(int *nums, int numSize)
 {
     unsigned int capacity = numSize;
-
     capacity = capacity * 2;
+    
     // create array with correctly allocated memory ------
     HashSet **array = malloc(sizeof(HashSet *) * capacity);
 
@@ -58,10 +58,7 @@ bool containsDuplicate(int *nums, int numSize)
         {
             return true;
         }
-
-
     }
-
     return false;
 }
 

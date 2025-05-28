@@ -2,17 +2,21 @@
 #include <stdio.h>
 #include <string.h>
 
+
+// ---------------- HashSet structure ---------------- >
 typedef struct HashSet
 {
     int data;
     int index;
     struct HashSet *next;
 } HashSet;
+// ---------------- HashSet structure ---------------- <
 
-/// @brief generate hash based on the number and the capacity
-/// @param data 
-/// @param capacity 
-/// @return unsigend int number which will be useful for the index 
+
+/// @brief Generate a hash value for the given data based on the capacity
+/// @param data The integer data to hash
+/// @param capacity The capacity of the hash table
+/// @return The hash value as an unsigned integer
 unsigned int generateHash(int data, unsigned int capacity)
 {
     return data % capacity;
@@ -39,12 +43,7 @@ int checkAndAddInHashSet(HashSet **arr, int data, int index, int capacity)
 }
 
 
-/// @brief principal function wich send an array with 2 numbers to sum target
-/// @param nums
-/// @param numsSize
-/// @param target
-/// @param returnSize
-/// @return pointer of the array
+// --------------------- Main function --------------------- >
 int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 {
     unsigned int capacity = numsSize;

@@ -14,7 +14,7 @@ class Solution:
 # hashtable
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        res = defaultdict(list)
+        res = defaultdict(list) # signature -> list of anagrams
         for s in strs:
             count = [0] * 26
             for c in s:

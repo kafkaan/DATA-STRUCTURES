@@ -1,3 +1,7 @@
+import collections
+from typing import List
+# https://leetcode.com/problems/two-sum/
+
 #brute force
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -9,7 +13,7 @@ class Solution:
 
 
 
-#sorting
+#sorting and two pointers
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         A = []

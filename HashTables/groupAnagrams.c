@@ -10,14 +10,13 @@ void swap(char *a, char *b);
 
 
 // ----------------------------------- hashsets ------------------------------------ >
-// Structure pour stocker un mot dans un groupe
 typedef struct WordNode
 {
     char *word;
     struct WordNode *next;
 } WordNode;
 
-// Structure pour représenter un groupe d'anagrammes
+
 typedef struct AnagramGroup
 {
     char *signature;           // Signature triée qui identifie ce groupe
@@ -25,6 +24,10 @@ typedef struct AnagramGroup
     int size;                  // Nombre de mots dans ce groupe
     struct AnagramGroup *next; // Prochain groupe dans le même bucket
 } AnagramGroup;
+
+
+// ----------------------------------- hashsets end ------------------------------------ >
+
 
 // Génère une signature (mot trié) pour un mot
 char *getSignature(char *word)
@@ -40,11 +43,13 @@ char *getSignature(char *word)
 // ---------------------------------------------- ADD WORD ---------------------- >
 void addWord(AnagramGroup **table, char *word, int capacity, int *groupCount)
 {
+    // if word is NULL or empty, ignore it
     if (!word)
         return;
 
-    // Génère la signature pour ce mot
+    // create a signature for the word
     char *signature = getSignature(word);
+    // if signature is NULL (memory allocation failed), ignore it
     if (!signature)
         return;
 
@@ -177,7 +182,6 @@ void swap(char *a, char *b)
 // ------------------------------ Trie End ----------------------------------------------------------- >
 
 // --------------------------- Main ------------------------------------------------------------------
-// Main function pour grouper les anagrammes
 char ***groupAnagrams(char **strs, int strsSize, int *returnSize, int **returnColumnSizes)
 {
     // Utilise un nombre premier pour la taille de la table de hashage

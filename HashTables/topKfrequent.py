@@ -24,6 +24,7 @@ class Solution:
 
         heap = []
         for num in count.keys():
+            # When the heap size exceeds k, we remove the element with the smallest frequency
             heapq.heappush(heap, (count[num], num))
             if len(heap) > k:
                 heapq.heappop(heap)

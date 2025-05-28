@@ -21,7 +21,7 @@ class Solution:
                 return True
         return False
 #-------------------------------------------------------
-# Hash Set solutoion
+# Hash Set Solution
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         seen = set()
