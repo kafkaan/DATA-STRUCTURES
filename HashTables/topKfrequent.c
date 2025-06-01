@@ -16,7 +16,7 @@ Output: [1]
 */
 
 
-/// @brief struct Hashset contains data the frequence of the elemnt and next element pointer -------------------- >
+
 typedef struct HashSet
 {
     int data;

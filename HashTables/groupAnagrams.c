@@ -3,12 +3,6 @@
 #include <stdbool.h>
 #include <string.h>
 
-
-// ------------------- declarations -----------------------------------
-void quickSort(char arr[], int low, int high);
-void swap(char *a, char *b);
-
-
 // ----------------------------------- hashsets ------------------------------------ >
 typedef struct WordNode
 {
@@ -261,6 +255,8 @@ char ***groupAnagrams(char **strs, int strsSize, int *returnSize, int **returnCo
     return result;
 }
 
+
+// --------------------------------------- Main End -------------------------------------------- >
 int main()
 {
     char *strs[] = {"eat", "tea", "tan", "ate", "nat", "bat"};

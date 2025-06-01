@@ -8,8 +8,11 @@
  */
 
 bool searchMatrix(int **matrix, int matrixSize, int *matrixColSize, int target) {
+    
+    // Verification of input parameters 
     if (matrixSize == 0 || *matrixColSize == 0) return false;
 
+    // initialization of variables
     int top = 0;
     int bot = matrixSize - 1;
     int cols = *matrixColSize;
@@ -28,6 +31,7 @@ bool searchMatrix(int **matrix, int matrixSize, int *matrixColSize, int target) 
         }
     }
 
+    // Si top dépasse bot, cela signifie que target n'est pas dans la matrice
     if (top > bot) return false;
 
     // La ligne est trouvée

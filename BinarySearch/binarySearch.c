@@ -1,3 +1,9 @@
+
+/// @brief Binary Search Algorithm
+/// @param nums 
+/// @param numsSize 
+/// @param target 
+/// @return Find or not
 int search(int* nums, int numsSize, int target) {
     int left = 0;
     int right = numsSize - 1;
