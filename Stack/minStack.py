@@ -1,3 +1,4 @@
+# brute force
 class MinStack:
 
     def __init__(self):
