@@ -13,10 +13,14 @@ typedef struct WordNode
 
 typedef struct AnagramGroup
 {
-    char *signature;           // Signature triée qui identifie ce groupe
-    WordNode *words;           // Liste des mots dans ce groupe
-    int size;                  // Nombre de mots dans ce groupe
-    struct AnagramGroup *next; // Prochain groupe dans le même bucket
+    // Signature triée qui identifie ce groupe
+    char *signature;           
+    // Liste des mots dans ce groupe
+    WordNode *words;
+    // Nombre de mots dans ce groupe           
+    int size;                 
+     // Prochain groupe dans le même bucket qui a la meme hash  
+    struct AnagramGroup *next;
 } AnagramGroup;
 
 

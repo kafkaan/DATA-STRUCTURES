@@ -1,9 +1,7 @@
 from typing import List
 from collections import defaultdict
 
-
-
-#brute force solution
+################### brute force solution ###########################
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         for i in range(len(nums)):
@@ -11,8 +9,8 @@ class Solution:
                 if nums[i] == nums[j]:
                     return True
         return False
-#-------------------------------------------------------
-#sorting solution
+
+####################### sorting solution ############################
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         nums.sort()
@@ -20,8 +18,7 @@ class Solution:
             if nums[i] == nums[i - 1]:
                 return True
         return False
-#-------------------------------------------------------
-# Hash Set Solution
+################### Hash Set Solution ########################
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         seen = set()

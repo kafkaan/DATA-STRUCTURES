@@ -1,10 +1,8 @@
-
 from typing import List
 from collections import defaultdict
 
+################################# brute #######################################
 
-
-# brute
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         for r in range(len(matrix)):
@@ -13,7 +11,8 @@ class Solution:
                     return True
         return False
     
-# stairecase search
+############################ stairecase search ######################################
+
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         m, n = len(matrix), len(matrix[0])
@@ -29,7 +28,8 @@ class Solution:
         return False
     
     
-#two pass
+################### two pass #########################################
+
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         ROWS, COLS = len(matrix), len(matrix[0])
@@ -59,7 +59,8 @@ class Solution:
         return False
 
 
-# One pass
+######################### One pass #########################################
+
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         ROWS, COLS = len(matrix), len(matrix[0])

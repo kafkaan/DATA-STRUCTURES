@@ -2,7 +2,7 @@ from typing import List
 from collections import defaultdict
 
 
-# sorting 
+######################## sorting ################## 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         res = defaultdict(list)
@@ -11,7 +11,7 @@ class Solution:
             res[sortedS].append(s)
         return list(res.values())
     
-# hashtable
+########################## hashtable #################
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         res = defaultdict(list) # signature -> list of anagrams

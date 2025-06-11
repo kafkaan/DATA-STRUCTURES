@@ -1,12 +1,12 @@
 #include <stdbool.h>
 
-/*
- * Recherche si target est présent dans une matrice triée.
- * Étape 1 : Recherche de la ligne possible
- * Étape 2 : Recherche binaire dans cette ligne
- * Complexité : O(log m + log n)
- */
 
+/// @brief Search a 2D matrix for a target value.
+/// @param matrix 
+/// @param matrixSize 
+/// @param matrixColSize 
+/// @param target 
+/// @return bool true if the target is found, false otherwise.
 bool searchMatrix(int **matrix, int matrixSize, int *matrixColSize, int target) {
     
     // Verification of input parameters 
